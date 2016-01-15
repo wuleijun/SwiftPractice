@@ -17,6 +17,9 @@ class ARHomeViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         self.navigationController!.navigationBar.hidden = true
+        
+        let signView = RJSignView.init(frame: CGRectMake(0, 0, 500, 500))
+        self.view.addSubview(signView)
     }
 
     override func didReceiveMemoryWarning() {

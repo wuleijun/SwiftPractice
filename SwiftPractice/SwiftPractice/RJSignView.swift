@@ -81,7 +81,7 @@ class RJSignView: UIView {
     func saveAction(){
         self.delegate?.signViewDidSave(self.cacheImage)
         if(isCleanAfterSave){
-            clearAction()
+            self.clearAction()
         }
     }
     
@@ -97,9 +97,9 @@ class RJSignView: UIView {
         self.addSubview(clearButton)
         clearButton.snp_makeConstraints{ (make) -> Void in
             make.left.bottom.equalTo(self)
-            make.size.equalTo(CGSizeMake(50, 30))
+            make.size.equalTo(CGSize(width: 50, height: 30))
         }
-        
+      
         self.addSubview(saveButton)
         saveButton.snp_makeConstraints { (make) -> Void in
             make.right.bottom.equalTo(self)

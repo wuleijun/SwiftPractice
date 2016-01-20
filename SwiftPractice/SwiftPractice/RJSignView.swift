@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SnapKit
 
 class RJSignView: UIView {
 
@@ -15,6 +16,34 @@ class RJSignView: UIView {
     //Keep track the four points of bezierPath segment
     private var points = [CGPoint](count: 4, repeatedValue: CGPointZero)
     private var currentTrackIndex = 0
+    private lazy var clearButton : UIButton = {
+        let button:UIButton = UIButton()
+        button.setTitle("重签", forState:.Normal)
+        button.setTitleColor(UIColor.blackColor(), forState: .Normal)
+        button.backgroundColor = UIColor.lightGrayColor()
+        button.addTarget(self, action: "clearAction", forControlEvents:.TouchUpInside)
+        return button
+    }()
+    
+    private lazy var saveButton : UIButton = {
+        let saveButton : UIButton = UIButton()
+        saveButton.setTitle("保存", forState: .Normal)
+        saveButton.setTitleColor(UIColor.blackColor(), forState: .Normal)
+        saveButton.backgroundColor = UIColor.lightGrayColor()
+        saveButton.addTarget(self, action: "saveAction", forControlEvents: .TouchUpInside)
+        return saveButton
+    }()
+    
+    // MARK: Actions
+    func clearAction(){
+        cacheImage = nil
+        self.drawingPath.removeAllPoints()
+        self .setNeedsDisplay()
+    }
+    
+    func saveAction()->UIImage?{
+        return self.cacheImage
+    }
     
     // MARK: Public Var
     var lineWidth:CGFloat = 2.0{
@@ -43,6 +72,19 @@ class RJSignView: UIView {
         self.drawingPath = UIBezierPath()
         self.drawingPath.lineCapStyle = CGLineCap.Round
         self.drawingPath.lineJoinStyle = CGLineJoin.Round
+        
+        self.addSubview(clearButton)
+        clearButton.snp_makeConstraints{ (make) -> Void in
+            make.left.bottom.equalTo(self)
+            make.size.equalTo(CGSizeMake(50, 30))
+        }
+        
+        self.addSubview(saveButton)
+        saveButton.snp_makeConstraints { (make) -> Void in
+            make.right.bottom.equalTo(self)
+            make.size.equalTo(clearButton)
+        }
+        
     }
     
     private func drawCacheImage(){
@@ -107,3 +149,4 @@ class RJSignView: UIView {
     */
 
 }
+

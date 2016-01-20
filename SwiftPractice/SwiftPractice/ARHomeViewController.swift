@@ -9,17 +9,21 @@
 import UIKit
 import Alamofire
 
-let ARHomeCellId:String = "ARHomeCellId";
+let RJHomeCellId:String = "RJHomeCellId";
 
 class ARHomeViewController: UIViewController {
 
+    let exampleTitles = ["RJSignView"]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
-        self.navigationController!.navigationBar.hidden = true
-        
-        let signView = RJSignView.init(frame: CGRectMake(0, 0, 500, 500))
-        self.view.addSubview(signView)
+        title = "SwiftPratice";
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        // Get the new view controller using segue.destinationViewController.
+        // Pass the selected object to the new view controller.
     }
 
     override func didReceiveMemoryWarning() {
@@ -35,11 +39,12 @@ extension ARHomeViewController : UITableViewDataSource {
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 2
+        return exampleTitles.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let homeCell = tableView.dequeueReusableCellWithIdentifier(ARHomeCellId) as! ARHomeCell
+        let homeCell = tableView.dequeueReusableCellWithIdentifier(RJHomeCellId) as! RJHomeCell
+        homeCell.textLabel?.text = exampleTitles[indexPath.row]
         return homeCell
     }
     

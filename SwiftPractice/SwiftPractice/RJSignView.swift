@@ -57,6 +57,7 @@ class RJSignView: UIView {
     }
     var cacheImage:UIImage?
     var delegate:RJSignViewDelegate?
+    var isCleanAfterSave = true
     
     // MARK: Init
     override init(frame: CGRect) {
@@ -73,12 +74,15 @@ class RJSignView: UIView {
     func clearAction(){
         cacheImage = nil
         self.drawingPath.removeAllPoints()
-        self .setNeedsDisplay()
+        self.setNeedsDisplay()
         indicatorLabel.hidden = false
     }
     
     func saveAction(){
         self.delegate?.signViewDidSave(self.cacheImage)
+        if(isCleanAfterSave){
+            clearAction()
+        }
     }
     
     

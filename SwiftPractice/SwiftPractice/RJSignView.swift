@@ -9,7 +9,11 @@
 import UIKit
 import SnapKit
 
+
 protocol RJSignViewDelegate{
+    /**
+     save current image
+     */
     func signViewDidSave(image :UIImage?)
 }
 
@@ -20,6 +24,8 @@ class RJSignView: UIView {
     //Keep track the four points of bezierPath segment
     private var points = [CGPoint](count: 4, repeatedValue: CGPointZero)
     private var currentTrackIndex = 0
+    
+    
     private lazy var clearButton : UIButton = {
         let button:UIButton = UIButton()
         button.setTitle("重签", forState:.Normal)
@@ -28,7 +34,6 @@ class RJSignView: UIView {
         button.addTarget(self, action: "clearAction", forControlEvents:.TouchUpInside)
         return button
     }()
-    
     private lazy var saveButton : UIButton = {
         let saveButton : UIButton = UIButton()
         saveButton.setTitle("保存", forState: .Normal)
@@ -36,6 +41,12 @@ class RJSignView: UIView {
         saveButton.backgroundColor = UIColor.lightGrayColor()
         saveButton.addTarget(self, action: "saveAction", forControlEvents: .TouchUpInside)
         return saveButton
+    }()
+    private lazy var indicatorLabel : UILabel = {
+       let label = UILabel()
+        label.text = "请在此签名"
+        label.textColor = UIColor.init(red: 200/255, green: 200/255, blue: 200/255, alpha: 1)
+        return label
     }()
     
     // MARK: Public Var
@@ -63,6 +74,7 @@ class RJSignView: UIView {
         cacheImage = nil
         self.drawingPath.removeAllPoints()
         self .setNeedsDisplay()
+        indicatorLabel.hidden = false
     }
     
     func saveAction(){
@@ -88,6 +100,11 @@ class RJSignView: UIView {
         saveButton.snp_makeConstraints { (make) -> Void in
             make.right.bottom.equalTo(self)
             make.size.equalTo(clearButton)
+        }
+        
+        self.addSubview(indicatorLabel)
+        indicatorLabel.snp_makeConstraints { (make) -> Void in
+            make.center.equalTo(self)
         }
     }
     
@@ -115,7 +132,7 @@ class RJSignView: UIView {
         self.currentTrackIndex  = 0
         let touch:UITouch! = touches.first;
         points[0] = touch.locationInView(self)
-        
+        indicatorLabel.hidden = true
     }
     
     override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {

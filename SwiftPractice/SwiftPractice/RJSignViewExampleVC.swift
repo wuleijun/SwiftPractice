@@ -16,6 +16,7 @@ class RJSignViewExampleVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "RJSignView"
+        signView.delegate = self
         // Do any additional setup after loading the view.
     }
 
@@ -33,6 +34,10 @@ class RJSignViewExampleVC: UIViewController {
         // Get the new view controller using segue.destinationViewController.
         // Pass the selected object to the new view controller.
     }
+}
 
-
+extension RJSignViewExampleVC:RJSignViewDelegate{
+    func signViewDidSave(image: UIImage?) {
+        displayImageView.image = image
+    }
 }

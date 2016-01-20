@@ -25,16 +25,27 @@
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1mh-c3-GTo">
                                 <rect key="frame" x="0.0" y="332" width="600" height="267.5"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Click &quot;保存&quot; to show image" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bZr-xf-kg2">
+                                <rect key="frame" x="203" y="339" width="194.5" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="W8X-py-8Do"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="trailingMargin" secondItem="1mh-c3-GTo" secondAttribute="trailing" constant="-20" id="46H-F4-5fX"/>
+                            <constraint firstItem="bZr-xf-kg2" firstAttribute="top" secondItem="he4-pg-r4Q" secondAttribute="bottom" constant="7.5" id="G1I-Au-2Gb"/>
                             <constraint firstItem="1mh-c3-GTo" firstAttribute="width" secondItem="he4-pg-r4Q" secondAttribute="width" id="UFX-Eg-1rr"/>
                             <constraint firstItem="XNO-Qb-BEE" firstAttribute="top" secondItem="1mh-c3-GTo" secondAttribute="bottom" id="aKV-je-6mS"/>
                             <constraint firstAttribute="trailingMargin" secondItem="he4-pg-r4Q" secondAttribute="trailing" constant="-20" id="dAO-4h-mlO"/>
                             <constraint firstItem="1mh-c3-GTo" firstAttribute="leading" secondItem="OQ8-nK-Ph7" secondAttribute="leadingMargin" constant="-20" id="hft-rW-vbG"/>
                             <constraint firstItem="1mh-c3-GTo" firstAttribute="height" secondItem="he4-pg-r4Q" secondAttribute="height" id="nV9-pI-gX2"/>
                             <constraint firstItem="he4-pg-r4Q" firstAttribute="top" secondItem="Yc1-4a-M9b" secondAttribute="bottom" id="qXZ-WN-nNM"/>
+                            <constraint firstItem="bZr-xf-kg2" firstAttribute="centerX" secondItem="OQ8-nK-Ph7" secondAttribute="centerX" id="scZ-0z-drD"/>
                             <constraint firstItem="he4-pg-r4Q" firstAttribute="leading" secondItem="OQ8-nK-Ph7" secondAttribute="leadingMargin" constant="-20" id="uSc-er-5M0"/>
                             <constraint firstItem="1mh-c3-GTo" firstAttribute="top" secondItem="he4-pg-r4Q" secondAttribute="bottom" constant="1" id="zKr-It-s0n"/>
                         </constraints>

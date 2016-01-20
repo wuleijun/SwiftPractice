@@ -9,6 +9,10 @@
 import UIKit
 import SnapKit
 
+protocol RJSignViewDelegate{
+    func signViewDidSave(image :UIImage?)
+}
+
 class RJSignView: UIView {
 
     // MARK: Private Var
@@ -34,17 +38,6 @@ class RJSignView: UIView {
         return saveButton
     }()
     
-    // MARK: Actions
-    func clearAction(){
-        cacheImage = nil
-        self.drawingPath.removeAllPoints()
-        self .setNeedsDisplay()
-    }
-    
-    func saveAction()->UIImage?{
-        return self.cacheImage
-    }
-    
     // MARK: Public Var
     var lineWidth:CGFloat = 2.0{
         didSet{
@@ -52,6 +45,7 @@ class RJSignView: UIView {
         }
     }
     var cacheImage:UIImage?
+    var delegate:RJSignViewDelegate?
     
     // MARK: Init
     override init(frame: CGRect) {
@@ -64,8 +58,19 @@ class RJSignView: UIView {
         self.setup()
     }
     
+    // MARK: Actions
+    func clearAction(){
+        cacheImage = nil
+        self.drawingPath.removeAllPoints()
+        self .setNeedsDisplay()
+    }
     
-    // MARK: ---
+    func saveAction(){
+        self.delegate?.signViewDidSave(self.cacheImage)
+    }
+    
+    
+    // MARK: Helper
     private func setup(){
         self.multipleTouchEnabled = false
         self.backgroundColor = UIColor.whiteColor()
@@ -84,7 +89,6 @@ class RJSignView: UIView {
             make.right.bottom.equalTo(self)
             make.size.equalTo(clearButton)
         }
-        
     }
     
     private func drawCacheImage(){
@@ -101,7 +105,7 @@ class RJSignView: UIView {
         UIGraphicsEndImageContext()
     }
     
-    // MARK: ---
+    // MARK: Overdide
     override func drawRect(rect: CGRect) {
         self.cacheImage?.drawInRect(rect)
         self.drawingPath.stroke()
@@ -149,4 +153,5 @@ class RJSignView: UIView {
     */
 
 }
+
 

@@ -55,7 +55,8 @@ class RJSignView: UIView {
             self.drawingPath?.lineWidth = lineWidth
         }
     }
-    var cacheImage:UIImage?
+    //only getter is public,setter is private
+    private (set) var cacheImage:UIImage?
     var delegate:RJSignViewDelegate?
     var isCleanAfterSave = true
     

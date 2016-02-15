@@ -1,11 +1,101 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1509" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wQh-iu-2E8">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F1605" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="wQh-iu-2E8">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
+        <!--Custom PresentVC-->
+        <scene sceneID="Yxs-si-U13">
+            <objects>
+                <viewController id="Ubu-ly-97D" customClass="RJCustomPresentVC" customModule="SwiftPractice" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="3os-G4-xFJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="YeH-OD-P3N"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ocr-vI-Val">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rnw-7N-W8h">
+                                <rect key="frame" x="270" y="430" width="60" height="60"/>
+                                <color key="backgroundColor" red="0.1176470588" green="0.72549019609999998" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="60" id="dji-MG-4Gx"/>
+                                    <constraint firstAttribute="height" constant="60" id="u4N-Hb-Vtn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="+">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <segue destination="pPJ-iw-xLQ" kind="presentation" id="Fyl-ws-rXw"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="rnw-7N-W8h" firstAttribute="centerX" secondItem="ocr-vI-Val" secondAttribute="centerX" id="mKb-wh-d92"/>
+                            <constraint firstItem="YeH-OD-P3N" firstAttribute="top" secondItem="rnw-7N-W8h" secondAttribute="bottom" constant="110" id="pz7-N2-B0K"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="someButton" destination="rnw-7N-W8h" id="VT0-BW-H7L"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jcK-Lw-MzG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1257" y="949"/>
+        </scene>
+        <!--PresentingVC-->
+        <scene sceneID="INh-vt-sLz">
+            <objects>
+                <viewController id="pPJ-iw-xLQ" customClass="RJPresentingVC" customModule="SwiftPractice" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="RMp-va-gEL"/>
+                        <viewControllerLayoutGuide type="bottom" id="DL5-gC-Gzf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6H7-Qu-8vq">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N6k-SY-Vux">
+                                <rect key="frame" x="157" y="497" width="60" height="60"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="07A-LL-Zih"/>
+                                    <constraint firstAttribute="width" constant="60" id="Kll-G3-WWk"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="layer.cornerRadius">
+                                        <integer key="value" value="30"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="close_Touch:" destination="pPJ-iw-xLQ" eventType="touchUpInside" id="j38-uO-kkj"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1176470588" green="0.72549019609999998" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="DL5-gC-Gzf" firstAttribute="top" secondItem="N6k-SY-Vux" secondAttribute="bottom" constant="110" id="IAi-2c-ZoQ"/>
+                            <constraint firstItem="N6k-SY-Vux" firstAttribute="centerX" secondItem="6H7-Qu-8vq" secondAttribute="centerX" id="wLn-eF-KNW"/>
+                        </constraints>
+                    </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="667"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lCB-Ki-YoG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1958.5" y="1022.5"/>
+        </scene>
         <!--Sign View ExampleVC-->
         <scene sceneID="EBM-1b-yvZ">
             <objects>
@@ -31,7 +121,7 @@
                                     <constraint firstAttribute="height" constant="21" id="W8X-py-8Do"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="16"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
@@ -58,7 +148,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a0D-do-B6R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="675" y="-46"/>
+            <point key="canvasLocation" x="1265" y="246"/>
         </scene>
         <!--Home View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -83,9 +173,6 @@
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                         </tableViewCellContentView>
-                                        <connections>
-                                            <segue destination="fbM-IN-cx0" kind="show" id="2X2-uu-6Uz"/>
-                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -103,10 +190,14 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="xTj-Fe-uXy"/>
+                    <connections>
+                        <segue destination="fbM-IN-cx0" kind="show" identifier="showRJSignView" id="jqf-GM-ul3"/>
+                        <segue destination="Ubu-ly-97D" kind="show" identifier="showCustomPresent" id="uCq-UB-Fcq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="665" y="698"/>
+            <point key="canvasLocation" x="487" y="630"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="jBU-B4-6cF">
@@ -122,7 +213,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SBL-WT-xFd" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-22" y="641"/>
+            <point key="canvasLocation" x="-262" y="625"/>
         </scene>
     </scenes>
 </document>

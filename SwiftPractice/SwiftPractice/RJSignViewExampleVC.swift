@@ -28,6 +28,7 @@ class RJSignViewExampleVC: UIViewController {
 
 //MARK: -RJSignViewDelegate
 extension RJSignViewExampleVC:RJSignViewDelegate{
+    
     func signViewDidSave(image: UIImage?) {
         displayImageView.image = image
     }

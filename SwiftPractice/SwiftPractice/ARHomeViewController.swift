@@ -13,7 +13,9 @@ let RJHomeCellId:String = "RJHomeCellId";
 
 class ARHomeViewController: UIViewController {
 
-    let exampleTitles = ["RJSignView"]
+    let exampleTitles = ["RJSignView","Present Animation"]
+    let segueIdentifier = ["showRJSignView","showCustomPresent"]
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,6 +56,8 @@ extension ARHomeViewController : UITableViewDelegate {
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        let segueId = segueIdentifier[indexPath.row]
+        self.performSegueWithIdentifier(segueId, sender: nil)
     }
     
 }

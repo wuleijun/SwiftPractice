@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		45207D231C71B7170051E999 /* RJCustomPresentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45207D221C71B7170051E999 /* RJCustomPresentVC.swift */; };
+		45207D261C71BC100051E999 /* BubbleTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45207D251C71BC100051E999 /* BubbleTransition.swift */; };
+		45207D291C71C4830051E999 /* RJPresentingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45207D281C71C4830051E999 /* RJPresentingVC.swift */; };
 		45D6549E1C4F7081002CC5D8 /* RJSignViewExampleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D6549D1C4F7081002CC5D8 /* RJSignViewExampleVC.swift */; };
 		45D654A01C4F7542002CC5D8 /* RJHomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D6549F1C4F7542002CC5D8 /* RJHomeCell.swift */; };
 		45E53EE61C3F8C90001A50A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E53EE51C3F8C90001A50A1 /* AppDelegate.swift */; };
@@ -39,6 +42,10 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		45207D221C71B7170051E999 /* RJCustomPresentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RJCustomPresentVC.swift; sourceTree = "<group>"; };
+		45207D251C71BC100051E999 /* BubbleTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubbleTransition.swift; sourceTree = "<group>"; };
+		45207D271C71BCB00051E999 /* BubbleTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BubbleTransition.h; sourceTree = "<group>"; };
+		45207D281C71C4830051E999 /* RJPresentingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RJPresentingVC.swift; sourceTree = "<group>"; };
 		45D6549D1C4F7081002CC5D8 /* RJSignViewExampleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RJSignViewExampleVC.swift; sourceTree = "<group>"; };
 		45D6549F1C4F7542002CC5D8 /* RJHomeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RJHomeCell.swift; sourceTree = "<group>"; };
 		45E53EE21C3F8C90001A50A1 /* SwiftPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -87,6 +94,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		45207D241C71BBE50051E999 /* CustomPresent */ = {
+			isa = PBXGroup;
+			children = (
+				45207D271C71BCB00051E999 /* BubbleTransition.h */,
+				45207D251C71BC100051E999 /* BubbleTransition.swift */,
+				45207D2A1C71C5B40051E999 /* Controllers */,
+			);
+			name = CustomPresent;
+			sourceTree = "<group>";
+		};
+		45207D2A1C71C5B40051E999 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				45207D221C71B7170051E999 /* RJCustomPresentVC.swift */,
+				45207D281C71C4830051E999 /* RJPresentingVC.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		45E53ED91C3F8C90001A50A1 = {
 			isa = PBXGroup;
 			children = (
@@ -112,6 +138,7 @@
 		45E53EE41C3F8C90001A50A1 /* SwiftPractice */ = {
 			isa = PBXGroup;
 			children = (
+				45207D241C71BBE50051E999 /* CustomPresent */,
 				45E5B8F01C48E10400AFBAC5 /* RJSignView */,
 				45E53EE51C3F8C90001A50A1 /* AppDelegate.swift */,
 				45E53EE71C3F8C90001A50A1 /* ARHomeViewController.swift */,
@@ -351,12 +378,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45207D291C71C4830051E999 /* RJPresentingVC.swift in Sources */,
+				45207D261C71BC100051E999 /* BubbleTransition.swift in Sources */,
 				45D654A01C4F7542002CC5D8 /* RJHomeCell.swift in Sources */,
 				45E53EEE1C3F8C90001A50A1 /* SwiftPractice.xcdatamodeld in Sources */,
 				45E53EE81C3F8C90001A50A1 /* ARHomeViewController.swift in Sources */,
 				45E53EE61C3F8C90001A50A1 /* AppDelegate.swift in Sources */,
 				45D6549E1C4F7081002CC5D8 /* RJSignViewExampleVC.swift in Sources */,
 				45E5B8F21C48E11B00AFBAC5 /* RJSignView.swift in Sources */,
+				45207D231C71B7170051E999 /* RJCustomPresentVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

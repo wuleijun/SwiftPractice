@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RJCustomPresentVC: UIViewController,UIViewControllerTransitioningDelegate {
+class RJCustomPresentVC: UIViewController {
     
     @IBOutlet weak var someButton:UIButton!
     let transition = BubbleTransition()
@@ -23,8 +23,9 @@ class RJCustomPresentVC: UIViewController,UIViewControllerTransitioningDelegate 
         controller.transitioningDelegate = self
         controller.modalPresentationStyle = .Custom
     }
-    
-    
+}
+
+extension RJCustomPresentVC:UIViewControllerTransitioningDelegate{
     func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
         transition.transitionMode = .Present
         transition.startingPoint = someButton.center
@@ -39,7 +40,5 @@ class RJCustomPresentVC: UIViewController,UIViewControllerTransitioningDelegate 
         return transition
     }
 }
-
-
 
 

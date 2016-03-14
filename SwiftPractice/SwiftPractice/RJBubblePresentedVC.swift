@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RJPresentingVC: UIViewController {
+class RJBubblePresentedVC: UIViewController {
 
     @IBAction func close_Touch(sender: AnyObject) {
         dismissViewControllerAnimated(true, completion: nil)

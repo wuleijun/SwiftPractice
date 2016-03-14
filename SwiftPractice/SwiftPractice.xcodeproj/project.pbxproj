@@ -9,9 +9,11 @@
 /* Begin PBXBuildFile section */
 		45207D231C71B7170051E999 /* RJCustomPresentVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45207D221C71B7170051E999 /* RJCustomPresentVC.swift */; };
 		45207D261C71BC100051E999 /* BubbleTransition.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45207D251C71BC100051E999 /* BubbleTransition.swift */; };
-		45207D291C71C4830051E999 /* RJPresentingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45207D281C71C4830051E999 /* RJPresentingVC.swift */; };
+		45207D291C71C4830051E999 /* RJBubblePresentedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45207D281C71C4830051E999 /* RJBubblePresentedVC.swift */; };
 		45D6549E1C4F7081002CC5D8 /* RJSignViewExampleVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D6549D1C4F7081002CC5D8 /* RJSignViewExampleVC.swift */; };
 		45D654A01C4F7542002CC5D8 /* RJHomeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D6549F1C4F7542002CC5D8 /* RJHomeCell.swift */; };
+		45DE47931C96A33700D33077 /* RJUpDownPresentingVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DE47921C96A33700D33077 /* RJUpDownPresentingVC.swift */; };
+		45DE47951C96A41500D33077 /* RJUpDownPresentedVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45DE47941C96A41500D33077 /* RJUpDownPresentedVC.swift */; };
 		45E53EE61C3F8C90001A50A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E53EE51C3F8C90001A50A1 /* AppDelegate.swift */; };
 		45E53EE81C3F8C90001A50A1 /* ARHomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45E53EE71C3F8C90001A50A1 /* ARHomeViewController.swift */; };
 		45E53EEB1C3F8C90001A50A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 45E53EE91C3F8C90001A50A1 /* Main.storyboard */; };
@@ -45,9 +47,11 @@
 		45207D221C71B7170051E999 /* RJCustomPresentVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RJCustomPresentVC.swift; sourceTree = "<group>"; };
 		45207D251C71BC100051E999 /* BubbleTransition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BubbleTransition.swift; sourceTree = "<group>"; };
 		45207D271C71BCB00051E999 /* BubbleTransition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BubbleTransition.h; sourceTree = "<group>"; };
-		45207D281C71C4830051E999 /* RJPresentingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RJPresentingVC.swift; sourceTree = "<group>"; };
+		45207D281C71C4830051E999 /* RJBubblePresentedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RJBubblePresentedVC.swift; sourceTree = "<group>"; };
 		45D6549D1C4F7081002CC5D8 /* RJSignViewExampleVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RJSignViewExampleVC.swift; sourceTree = "<group>"; };
 		45D6549F1C4F7542002CC5D8 /* RJHomeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RJHomeCell.swift; sourceTree = "<group>"; };
+		45DE47921C96A33700D33077 /* RJUpDownPresentingVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RJUpDownPresentingVC.swift; sourceTree = "<group>"; };
+		45DE47941C96A41500D33077 /* RJUpDownPresentedVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RJUpDownPresentedVC.swift; sourceTree = "<group>"; };
 		45E53EE21C3F8C90001A50A1 /* SwiftPractice.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftPractice.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		45E53EE51C3F8C90001A50A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		45E53EE71C3F8C90001A50A1 /* ARHomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ARHomeViewController.swift; sourceTree = "<group>"; };
@@ -97,8 +101,7 @@
 		45207D241C71BBE50051E999 /* CustomPresent */ = {
 			isa = PBXGroup;
 			children = (
-				45207D271C71BCB00051E999 /* BubbleTransition.h */,
-				45207D251C71BC100051E999 /* BubbleTransition.swift */,
+				45DE47961C96A5A000D33077 /* BubbleTransition */,
 				45207D2A1C71C5B40051E999 /* Controllers */,
 			);
 			name = CustomPresent;
@@ -107,10 +110,37 @@
 		45207D2A1C71C5B40051E999 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
-				45207D221C71B7170051E999 /* RJCustomPresentVC.swift */,
-				45207D281C71C4830051E999 /* RJPresentingVC.swift */,
+				45DE47911C96A31000D33077 /* UpDownTransitionVCs */,
+				45DE47901C96A2FB00D33077 /* BubbleTransitionVCs */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		45DE47901C96A2FB00D33077 /* BubbleTransitionVCs */ = {
+			isa = PBXGroup;
+			children = (
+				45207D221C71B7170051E999 /* RJCustomPresentVC.swift */,
+				45207D281C71C4830051E999 /* RJBubblePresentedVC.swift */,
+			);
+			name = BubbleTransitionVCs;
+			sourceTree = "<group>";
+		};
+		45DE47911C96A31000D33077 /* UpDownTransitionVCs */ = {
+			isa = PBXGroup;
+			children = (
+				45DE47921C96A33700D33077 /* RJUpDownPresentingVC.swift */,
+				45DE47941C96A41500D33077 /* RJUpDownPresentedVC.swift */,
+			);
+			name = UpDownTransitionVCs;
+			sourceTree = "<group>";
+		};
+		45DE47961C96A5A000D33077 /* BubbleTransition */ = {
+			isa = PBXGroup;
+			children = (
+				45207D271C71BCB00051E999 /* BubbleTransition.h */,
+				45207D251C71BC100051E999 /* BubbleTransition.swift */,
+			);
+			name = BubbleTransition;
 			sourceTree = "<group>";
 		};
 		45E53ED91C3F8C90001A50A1 = {
@@ -378,9 +408,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				45207D291C71C4830051E999 /* RJPresentingVC.swift in Sources */,
+				45DE47931C96A33700D33077 /* RJUpDownPresentingVC.swift in Sources */,
+				45207D291C71C4830051E999 /* RJBubblePresentedVC.swift in Sources */,
 				45207D261C71BC100051E999 /* BubbleTransition.swift in Sources */,
 				45D654A01C4F7542002CC5D8 /* RJHomeCell.swift in Sources */,
+				45DE47951C96A41500D33077 /* RJUpDownPresentedVC.swift in Sources */,
 				45E53EEE1C3F8C90001A50A1 /* SwiftPractice.xcdatamodeld in Sources */,
 				45E53EE81C3F8C90001A50A1 /* ARHomeViewController.swift in Sources */,
 				45E53EE61C3F8C90001A50A1 /* AppDelegate.swift in Sources */,

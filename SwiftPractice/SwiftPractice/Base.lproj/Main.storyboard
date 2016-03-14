@@ -53,10 +53,88 @@
             </objects>
             <point key="canvasLocation" x="1257" y="949"/>
         </scene>
-        <!--PresentingVC-->
+        <!--Up Down PresentingVC-->
+        <scene sceneID="JTY-By-VHQ">
+            <objects>
+                <viewController id="hd3-22-toU" customClass="RJUpDownPresentingVC" customModule="SwiftPractice" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="JAy-0v-laW"/>
+                        <viewControllerLayoutGuide type="bottom" id="5vE-XE-KsZ"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="mLq-Pg-Len">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bqq-zv-hfs">
+                                <rect key="frame" x="265" y="448" width="70" height="50"/>
+                                <color key="backgroundColor" red="0.1176470588" green="0.72549019609999998" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="e0u-zB-UDh"/>
+                                    <constraint firstAttribute="width" constant="70" id="eVq-IP-MI2"/>
+                                </constraints>
+                                <state key="normal" title="Present">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="XFR-PD-bdG" kind="show" id="Rlz-uN-1w5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5vE-XE-KsZ" firstAttribute="top" secondItem="bqq-zv-hfs" secondAttribute="bottom" constant="102" id="Apm-ir-k0a"/>
+                            <constraint firstItem="bqq-zv-hfs" firstAttribute="centerX" secondItem="mLq-Pg-Len" secondAttribute="centerX" id="a53-dt-Ewg"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Om9-Bu-5JI" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1217" y="1723"/>
+        </scene>
+        <!--Up Down PresentedVC-->
+        <scene sceneID="r52-mh-OUx">
+            <objects>
+                <viewController id="XFR-PD-bdG" customClass="RJUpDownPresentedVC" customModule="SwiftPractice" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7Bl-SC-QUz"/>
+                        <viewControllerLayoutGuide type="bottom" id="mE1-9M-I3w"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1zw-ug-KvX">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Of3-dw-ozb">
+                                <rect key="frame" x="260" y="72" width="80" height="50"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="8OE-E3-ArX"/>
+                                    <constraint firstAttribute="width" constant="80" id="DtE-ck-DVb"/>
+                                </constraints>
+                                <state key="normal" title="Dismiss">
+                                    <color key="titleColor" red="0.1176470588" green="0.72549019609999998" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="dismiss_Touch:" destination="XFR-PD-bdG" eventType="touchUpInside" id="GDJ-pl-W4I"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.1176470588" green="0.72549019609999998" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="Of3-dw-ozb" firstAttribute="centerX" secondItem="1zw-ug-KvX" secondAttribute="centerX" id="dtj-m6-kar"/>
+                            <constraint firstItem="Of3-dw-ozb" firstAttribute="top" secondItem="7Bl-SC-QUz" secondAttribute="bottom" constant="52" id="itZ-3i-gCL"/>
+                        </constraints>
+                    </view>
+                    <nil key="simulatedTopBarMetrics"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="00Q-UG-gFq" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1992" y="1732"/>
+        </scene>
+        <!--Bubble PresentedVC-->
         <scene sceneID="INh-vt-sLz">
             <objects>
-                <viewController id="pPJ-iw-xLQ" customClass="RJPresentingVC" customModule="SwiftPractice" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="pPJ-iw-xLQ" customClass="RJBubblePresentedVC" customModule="SwiftPractice" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="RMp-va-gEL"/>
                         <viewControllerLayoutGuide type="bottom" id="DL5-gC-Gzf"/>
@@ -193,6 +271,7 @@
                     <connections>
                         <segue destination="fbM-IN-cx0" kind="show" identifier="showRJSignView" id="jqf-GM-ul3"/>
                         <segue destination="Ubu-ly-97D" kind="show" identifier="showCustomPresent" id="uCq-UB-Fcq"/>
+                        <segue destination="hd3-22-toU" kind="show" identifier="showUpDownPresent" id="fH8-hK-LKg"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

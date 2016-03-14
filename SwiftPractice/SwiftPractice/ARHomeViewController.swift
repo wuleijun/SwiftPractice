@@ -13,8 +13,8 @@ let RJHomeCellId:String = "RJHomeCellId";
 
 class ARHomeViewController: UIViewController {
 
-    let exampleTitles = ["RJSignView","Present Animation"]
-    let segueIdentifier = ["showRJSignView","showCustomPresent"]
+    let exampleTitles = ["RJSignView","Present Animation","showUpDownPresent"]
+    let segueIdentifier = ["showRJSignView","showCustomPresent","showUpDownPresent"]
     
     
     override func viewDidLoad() {

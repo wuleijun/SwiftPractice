@@ -23,6 +23,7 @@ class RJCustomPresentVC: UIViewController {
         controller.transitioningDelegate = self
         controller.modalPresentationStyle = .Custom
     }
+
 }
 
 extension RJCustomPresentVC:UIViewControllerTransitioningDelegate{

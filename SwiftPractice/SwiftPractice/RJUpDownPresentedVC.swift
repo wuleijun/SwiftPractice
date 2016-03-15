@@ -20,8 +20,8 @@ class RJUpDownPresentedVC: UIViewController {
          navigationController?.navigationBarHidden = true
     }
 
-    @IBAction func dismiss_Touch(sender: AnyObject) {
-        navigationController?.popViewControllerAnimated(true)
+    @IBAction func dismiss(sender: AnyObject) {
+        dismissViewControllerAnimated(true, completion: nil)
     }
     
     override func didReceiveMemoryWarning() {

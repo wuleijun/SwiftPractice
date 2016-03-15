@@ -76,7 +76,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="XFR-PD-bdG" kind="show" id="Rlz-uN-1w5"/>
+                                    <segue destination="XFR-PD-bdG" kind="presentation" id="VuJ-Qh-Kcb"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -115,7 +115,7 @@
                                     <color key="titleColor" red="0.1176470588" green="0.72549019609999998" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
                                 <connections>
-                                    <action selector="dismiss_Touch:" destination="XFR-PD-bdG" eventType="touchUpInside" id="GDJ-pl-W4I"/>
+                                    <action selector="dismiss:" destination="XFR-PD-bdG" eventType="touchUpInside" id="c9j-eD-WV6"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -129,7 +129,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="00Q-UG-gFq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1992" y="1732"/>
+            <point key="canvasLocation" x="2096" y="2124"/>
         </scene>
         <!--Bubble PresentedVC-->
         <scene sceneID="INh-vt-sLz">

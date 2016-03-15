@@ -10,6 +10,8 @@ import UIKit
 
 class RJUpDownPresentingVC: UIViewController {
 
+    let upDownTransition = RJUpDownTransition()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Up and Down";
@@ -21,24 +23,21 @@ class RJUpDownPresentingVC: UIViewController {
         navigationController?.navigationBarHidden = false
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        let controller = segue.destinationViewController
+        controller.transitioningDelegate = self
+        controller.modalPresentationStyle = .Custom
     }
-    */
-
 }
 
-extension RJUpDownPresentedVC:UIViewControllerTransitioningDelegate{
+extension RJUpDownPresentingVC:UIViewControllerTransitioningDelegate{
+    func animationControllerForPresentedController(presented: UIViewController, presentingController presenting: UIViewController, sourceController source: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        upDownTransition.transitionMode = .Present
+        return upDownTransition
+    }
     
+    func animationControllerForDismissedController(dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+        upDownTransition.transitionMode = .Dismiss
+        return upDownTransition
+    }
 }

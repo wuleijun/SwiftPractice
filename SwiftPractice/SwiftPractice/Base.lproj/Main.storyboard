@@ -76,7 +76,7 @@
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="XFR-PD-bdG" kind="presentation" id="VuJ-Qh-Kcb"/>
+                                    <segue destination="XFR-PD-bdG" kind="presentation" identifier="presentUpDown" id="VuJ-Qh-Kcb"/>
                                 </connections>
                             </button>
                         </subviews>

@@ -16,7 +16,7 @@ public class RJUpDownTransition: NSObject {
     }
     public var duration = 0.5
     public var transitionMode = TransitonMode.Present
-    
+    public var interactiveTransition = UIPercentDrivenInteractiveTransition()
 }
 
 extension RJUpDownTransition:UIViewControllerAnimatedTransitioning{
@@ -39,7 +39,8 @@ extension RJUpDownTransition:UIViewControllerAnimatedTransitioning{
                     toView.y = 0
                     fromView.y = -fromView.height
                 }, completion: { (_) -> Void in
-                     transitionContext.completeTransition(true)
+                    //FromView由UIKit另行管理
+                    transitionContext.completeTransition(true)
             })
         }else{
             
@@ -47,7 +48,6 @@ extension RJUpDownTransition:UIViewControllerAnimatedTransitioning{
                     toView.y = 0
                     fromView.y = fromView.height
                 }, completion: { (_) -> Void in
-                    fromView.removeFromSuperview()
                     transitionContext.completeTransition(true)
             })
         }
